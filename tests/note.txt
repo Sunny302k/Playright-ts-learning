@@ -1,0 +1,32 @@
+ - HTML report: xem tổng quan + chi tiết
+ - Artifacts: file đính kèm để debug như screenshot, video, trace
+
+
+- test(...) tạo test
+- page.goto(...): mở web
+- expect(...).toHaveTitle(...): kiểm tra title \
+
+
+
+Trong Automation, test fail khi:
+- app có vấn đề
+- test viết sai
+- locator sai
+- expected sai
+=> khi fail, đọc được report và chỉ ra đúng nguyên nhân
+
+
+
+Khi test fail, đừng nghĩ: “Ôi mình dở quá”
+Hãy đổi thành 3 câu này:
+1. Test đang kiểm tra cái gì?
+2. App hiện tại có đúng như thế không?
+3. Nếu không đúng thì do app hay do test?
+
+
+
+Khi test fail nên đọc 4 thứ:
+1. Tên test => test này đang kiểm tra cái gì
+2. Dòng code bị fail => nó fail ở bước nào
+3. Expected là gì => test mong đợi gì
+4. Actual là gì => biết app/ locator hiện tại ra sao
