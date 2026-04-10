@@ -30,3 +30,52 @@ Khi test fail nên đọc 4 thứ:
 2. Dòng code bị fail => nó fail ở bước nào
 3. Expected là gì => test mong đợi gì
 4. Actual là gì => biết app/ locator hiện tại ra sao
+
+
+LOCATOR : 
+    - getByPlaceholder: dùng để tìm ô nhập liệu theo chữ gợi ý
+    - getByRole: dùng để tìm element theo vai trò như button, checkbox, listitem, radio, alert, heading
+    - filter({hasText:...}) dùng để thu hẹp locator
+    - expect(...).toHaveCount(): dùng để kiểm tra số lượng
+    - expect(...).toBeVisible: dùng để kiểm tra có hiển thị hay không 
+    - getByText(): tìm text hiển thị trên màn hình => thường dùng để click() hoặc expect()
+    - getByLabel(): tìm theo label của form field: input, textarea, select, checkbox, radio => thường dùng để fill(), check(), selectOption()
+    - locator('css')
+        + page.locator('#email')
+        + page.locator('[data-testid="login-button]');
+
+
+
+ASSERTIONS:
+    - Là câu lệnh dùng để xác nhận một điều kiện là đúng
+    - Kiểm tra sau khi làm, hệ thống có đúng như mong đợi không
+
+    - Cú pháp của expect:
+        expect(actual).matcher(expected);
+        expect(2+2).toBe(4);
+            + actual: giá trị thực tế 
+            + matcher: kiểu kiểm tra
+            + expected: giá trị mong đợi
+        
+    - Có 2 nhóm expect:
+    + Nhóm 1: Assert giá trị thường
+        + string, number, boolean, array, object
+    + Nhóm 2: Assert UI với Playwright
+        + element có hiển thị không
+        + text có đúng không
+        + input có value không
+        + checkbox có checked không
+        + có bao nhiêu phần tử
+        + title page có đúng không
+    
+    + Một số matcher: 
+        + toBe(): kiểm tra bằng tuyệt đối: string, number, boolean
+        + toContain(): kiểm tra 1 phần tử nằm trong string hoặc array
+        + toHaveText(): kiểm tra text của element
+        + toBeVisible(): kiểm tra element có hiển thị trên UI
+        + toHaveValue(): kiểm tra giá trị trong input
+        + toBeChecked(): kiểm tra checkbox/ radio đã được chọn
+        + toHaveCount(): kiểm tra số lượng phần tử
+        + .not: kiểm tra phủ định
+
+
