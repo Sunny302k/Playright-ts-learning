@@ -77,5 +77,23 @@ ASSERTIONS:
         + toBeChecked(): kiểm tra checkbox/ radio đã được chọn
         + toHaveCount(): kiểm tra số lượng phần tử
         + .not: kiểm tra phủ định
+        + toBeHidden()
+        + toHaveURL()
+
+
+
+    - Assertion tự động retry => nó check liên tục cho đến khi điều kiện đúng hoặc hết timeout (default timeout của assertion = 5s)
+    
+Debug UI mode:
+    - Chạy test để run, xem step, debug, tua lại timeline, xem log, xem error, xem network, xem DOM snapshot, locator picker
+    npx playwright test --ui
+
+
+Trace Viewer:
+    - Cách đọc trace:
+        1. Xác định test fail ở action nào
+        2. So sánh After và Before 
+        3. 
+
 
 

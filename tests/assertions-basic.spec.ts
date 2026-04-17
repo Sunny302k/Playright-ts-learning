@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Assertions 1 - expect co ban', async ({ page }) => {
-    await page.setContent(`
+  await page.setContent(`
     <html>
       <head>
         <title>Assertions Basic</title>
@@ -29,21 +29,21 @@ test('Assertions 1 - expect co ban', async ({ page }) => {
     </html>
   `);
 
-    // 1) Generic assertions
-    const env = 'staging';
-    const menuItems = ['Home', 'Products', 'Contact'];
+  // 1) Generic assertions
+  const env = 'staging';
+  const menuItems = ['Home', 'Products', 'Contact'];
 
-    expect(env).toBe('staging');
-    expect(menuItems).toContain('Products');
+  expect(env).toBe('staging');
+  expect(menuItems).toContain('Products');
 
-    // 2) Page assertion
-    await expect(page).toHaveTitle('Assertions Basic');
+  // 2) Page assertion
+  await expect(page).toHaveTitle('Assertions Basic');
 
-    // 3) Locator assertions
-    await expect(page.getByTestId('page-title')).toHaveText('Login Form');
-    await expect(page.getByTestId('submit')).toBeVisible();
-    await expect(page.getByTestId('email')).toHaveValue('ha@test.com');
-    await expect(page.getByTestId('remember')).toBeChecked();
-    await expect(page.locator('[data-testid="menu"] li')).toHaveCount(3);
-    await expect(page.getByTestId('status')).not.toBeVisible();
+  // 3) Locator assertions
+  await expect(page.getByTestId('page-title')).toHaveText('Login Form');
+  await expect(page.getByTestId('submit')).toBeVisible();
+  await expect(page.getByTestId('email')).toHaveValue('ha@test.com');
+  await expect(page.getByTestId('remember')).toBeChecked();
+  await expect(page.locator('[data-testid="menu"] li')).toHaveCount(3);
+  await expect(page.getByTestId('status')).not.toBeVisible();
 });
