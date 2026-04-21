@@ -93,7 +93,10 @@ Trace Viewer:
     - Cách đọc trace:
         1. Xác định test fail ở action nào
         2. So sánh After và Before 
-        3. 
+        3. Nhìn timeline, đừng chỉ nhìn error text
+        4. Đọc locator của action
+        5. Mở source code đúng dòng fail
+        6. 
 
 
 
